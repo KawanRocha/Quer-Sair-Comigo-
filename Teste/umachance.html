@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer sair comigo? ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63031;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            width: 300px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        #btn-sim {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #btn-nao {
+            background-color: #e74c3c;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quer sair tomar cafe comigo um dia Ana 🌹</h1>
+    
+    <div class="botoes">
+        <button id="btn-sim" onclick="aceitou()">SIM!</button>
+        <button id="btn-nao" onmouseover="fugir()" onclick="fugir()">NÃO</button>
+    </div>
+
+    <script>
+        function fugir() {
+            const btnNao = document.getElementById('btn-nao');
+            
+            // Gera posições aleatórias baseadas no tamanho da tela
+            const larguraTela = window.innerWidth - btnNao.offsetWidth;
+            const alturaTela = window.innerHeight - btnNao.offsetHeight;
+            
+            const novoX = Math.random() * larguraTela;
+            const novoY = Math.random() * alturaTela;
+            
+            // Aplica as novas posições fixas na tela
+            btnNao.style.position = 'fixed';
+            btnNao.style.left = novoX + 'px';
+            btnNao.style.top = novoY + 'px';
+        }
+
+        function aceitou() {
+            alert('Eba! Mal posso esperar! 🥰 Te mando os detalhes por mensagem.');
+            // Se quiser redirecionar para o seu WhatsApp, mude o link abaixo:
+            // window.location.href = "https://wa.me";
+        }
+    </script>
+
+</body>
+</html>
